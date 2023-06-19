@@ -1,43 +1,40 @@
 public class Pizzas {
-
     private int tipoMasa;
     private int size;
     private boolean rellena;
     private boolean cebolla;
     private boolean sinGluten;
     private int recojida;
+    private boolean salsa;
+    private String tipoSalsa;
+    private boolean extraQueso;
+    private boolean piña;
+    private boolean champiñones;
+    private boolean jamon;
 
-    // tipo de masa
     public static final int FINA = 0;
     public static final int PAN = 1;
-
-    // tamaño de la pizza
     public static final int SMALL = 0;
     public static final int MEDIUM = 2;
     public static final int BIG = 3;
-
-    // recojida
     public static final int TIENDA = 0;
     public static final int PARALLEVAR = 1;
 
-    public Pizzas(){
+    public Pizzas() {
         this.cebolla = true;
         this.recojida = TIENDA;
         this.rellena = false;
         this.sinGluten = false;
         this.size = MEDIUM;
         this.tipoMasa = FINA;
+        this.salsa = false;
+        this.tipoSalsa = "sin salsa";
+        this.extraQueso = false;
+        this.piña = false;
+        this.champiñones = false;
+        this.jamon = false;
     }
 
-    /**
-     * Constructor con todoa los parametros
-     * @param tipoMasa espesor de la masa
-     * @param size tamaño de la pizza
-     * @param rellena si el borde esta relleno de queso
-     * @param cebolla lleva o no lleva
-     * @param sinGluten para celíacos
-     * @param recojida como lo va a recoger el cliente
-     */
     public Pizzas(int tipoMasa, int size, boolean rellena, boolean cebolla, boolean sinGluten, int recojida) {
         this.tipoMasa = tipoMasa;
         this.size = size;
@@ -45,6 +42,12 @@ public class Pizzas {
         this.cebolla = cebolla;
         this.sinGluten = sinGluten;
         this.recojida = recojida;
+        this.salsa = false;
+        this.tipoSalsa = "sin salsa";
+        this.extraQueso = false;
+        this.piña = false;
+        this.champiñones = false;
+        this.jamon = false;
     }
 
     public int getTipoMasa() {
@@ -93,5 +96,71 @@ public class Pizzas {
 
     public void setRecojida(int recojida) {
         this.recojida = recojida;
+    }
+
+    public boolean isSalsa() {
+        return salsa;
+    }
+
+    public void setSalsa(boolean salsa) {
+        this.salsa = salsa;
+    }
+
+    public String getTipoSalsa() {
+        return tipoSalsa;
+    }
+
+    public void setTipoSalsa(String tipoSalsa) {
+        this.tipoSalsa = tipoSalsa;
+    }
+
+    public boolean isExtraQueso() {
+        return extraQueso;
+    }
+
+    public void setExtraQueso(boolean extraQueso) {
+        this.extraQueso = extraQueso;
+    }
+
+    public boolean isPiña() {
+        return piña;
+    }
+
+    public void setPiña(boolean piña) {
+        this.piña = piña;
+    }
+
+    public boolean isChampiñones() {
+        return champiñones;
+    }
+
+    public void setChampiñones(boolean champiñones) {
+        this.champiñones = champiñones;
+    }
+
+    public boolean isJamon() {
+        return jamon;
+    }
+
+    public void setJamon(boolean jamon) {
+        this.jamon = jamon;
+    }
+
+    @Override
+    public String toString() {
+        return "Pizzas{" +
+                "tipoMasa=" + tipoMasa +
+                ", size=" + size +
+                ", rellena=" + rellena +
+                ", cebolla=" + cebolla +
+                ", sinGluten=" + sinGluten +
+                ", recojida=" + recojida +
+                ", salsa=" + salsa +
+                ", tipoSalsa='" + tipoSalsa + '\'' +
+                ", extraQueso=" + extraQueso +
+                ", piña=" + piña +
+                ", champiñones=" + champiñones +
+                ", jamon=" + jamon +
+                '}';
     }
 }
